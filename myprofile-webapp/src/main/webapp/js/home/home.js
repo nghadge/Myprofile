@@ -1,17 +1,12 @@
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'home/router/app-router', // Request router.js
-    'bootstrap',
-], function($, _, Backbone, Router, Bootstrap){
-    var initialize = function(){
-        console.log("I m here 1.2");
-        // Pass in our Router module and call it's initialize function
-        Router.initialize();
-    };
+define('config', ['module'], function (module) {
+    return module.config();
+});
 
-    return {
-        initialize: initialize
-    };
+require([
+    'config',
+    'backbone',
+    'home/HomeRouter' // Request router.js
+], function (config, Backbone, HomeRouter) {
+    new HomeRouter(config);
+    Backbone.history.start();
 });
