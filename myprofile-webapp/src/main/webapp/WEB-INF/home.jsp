@@ -32,11 +32,33 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/lib/bootstrap.min.js"></script>
-<script data-main="js/main" src="js/lib/require.js">
+<!--script data-main="js/main" src="js/lib/require.js">
   require.config || (require.config = {});
   require.config['config'] = {
     el: '.backbone-container'
   };
+</script!-->
+
+
+<!-- ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/lib/require.js"></script>
+<script type="text/javascript">
+  // Load common code that includes config,
+  // then load the app logic for this page.
+  require(['js/main'], function (main) {
+    // ./js/main.js sets the baseUrl to be ./js/
+    // You can ask for 'home/home' here instead
+    // of './js/app/main-about'
+    require(['home/home'], function(App) {
+      require.config || (require.config = {});
+      require.config['config'] = {
+        el: '.backbone-container'
+      };
+      console.log("I m here 1.1");
+      App.initialize();
+    });
+  });
 </script>
 </body>
 </html>

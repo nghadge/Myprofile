@@ -1,5 +1,6 @@
 // Set the require.js configuration for your application.
 require.config({
+    baseUrl: './js',
     paths: {
         jquery: 'lib/jquery',
         underscore: 'lib/underscore',
@@ -24,7 +25,4 @@ require.config({
     }
 });
 // Load our app module and pass it to our definition function
-require(['home'], function(App) {
-    console.log("I m here 1.1");
-    App.initialize();
-});
+
