@@ -1,6 +1,6 @@
 define([
     'backbone',
-    'home/views/HomeView'
+    'home/views/homeView'
 ], function (Backbone, HomeView) {
     return Backbone.Router.extend({
         routes: {
